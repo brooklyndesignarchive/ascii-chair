@@ -74,27 +74,38 @@ a { color: inherit; }
 }
 .mark {
   font-family: var(--cond); font-weight: 500;
-  font-size: 20px; letter-spacing: -0.01em; line-height: 1;
+  font-size: 18px; letter-spacing: -0.01em; line-height: 1;
   text-decoration: none; white-space: nowrap;
 }
-.nav { display: flex; gap: 14px; margin-left: 16px; font-family: var(--cond); font-weight: 500; font-size: 17px; }
+.nav { display: flex; gap: 12px; margin-left: 12px; font-family: var(--cond); font-weight: 500; font-size: 16px; }
 .nav a { text-decoration: none; padding: 10px 0; }
 .nav a:hover, .nav a:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
 
-/* Announcement */
-.announce { background: var(--paper); color: var(--black); }
-.announce .wrap {
+/* Mission, the first screen */
+.mission .wrap {
   display: flex; flex-direction: column;
   min-height: calc(100svh - 64px);
-  padding-top: 28px; padding-bottom: calc(var(--m) + env(safe-area-inset-bottom));
+  padding-top: 28px; padding-bottom: 48px;
 }
-.announce .top { display: flex; justify-content: space-between; align-items: baseline; }
+.mission .top { display: flex; justify-content: space-between; align-items: baseline; }
+.mission-title {
+  font-family: var(--cond); font-weight: 500;
+  font-size: min(17vw, 150px); line-height: 0.95; letter-spacing: -0.01em;
+  margin: auto 0 0; padding-top: 40px;
+}
+.mission-text { margin-top: 32px; max-width: 34em; }
+.mission-text p { margin: 0 0 1em; }
+
+/* Announcement */
+.announce { background: var(--paper); color: var(--black); }
+.announce { overflow: hidden; }
+.announce .wrap { padding-top: 64px; padding-bottom: 72px; }
 .event-title {
   font-family: var(--cond); font-weight: 700;
   /* "Materials" is about 3.7em wide; 22vw keeps it inside the 8 percent margins */
   font-size: min(22vw, 200px);
   line-height: 0.92; letter-spacing: -0.01em;
-  margin: auto 0 0; padding-top: 48px;
+  margin: 0;
 }
 .event-sub {
   font-family: var(--cond); font-weight: 500;
@@ -169,7 +180,8 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
   .label { font-size: 13px; }
   .site-head .wrap { min-height: 76px; }
   .mark { font-size: 28px; }
-  .announce .wrap { min-height: calc(100svh - 76px); }
+  .nav { font-size: 18px; gap: 16px; }
+  .mission .wrap { min-height: calc(100svh - 76px); }
   .details { grid-template-columns: repeat(2, minmax(0, 22em)); gap: 32px; }
   .about .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
   .about .section-head { grid-column: 1 / -1; }
@@ -185,20 +197,31 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
   <div class="wrap">
     <a class="mark" href="./">Brooklyn Design Archive</a>
     <nav class="nav" aria-label="Main">
-      <a href="#about">About</a>
+      <a href="#mission">Mission</a>
       <a href="#founder">Founder</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <section class="announce" aria-labelledby="event-title">
+  <section class="mission" id="mission" aria-labelledby="mission-title">
     <div class="wrap">
       <div class="top">
-        <p class="label">On loan</p>
+        <p class="label">Mission</p>
         <p class="label">2026</p>
       </div>
-      <h1 class="event-title" id="event-title">Materials<br>that<br>Matter</h1>
+      <h1 class="mission-title" id="mission-title">Design, kept with intention.</h1>
+      <div class="mission-text">
+        <p>Brooklyn Design Archive is a living archive of designed objects. Furniture, lighting, books and ephemera, collected and studied in Brooklyn.</p>
+        <p>It treats design as culture worth keeping. The collection is lent to exhibitions, written about in Brooklyn Design Review and opened to visitors by appointment.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="announce" aria-labelledby="event-title">
+    <div class="wrap">
+      <div class="section-head"><p class="label">On loan</p></div>
+      <h2 class="event-title" id="event-title">Materials<br>that<br>Matter</h2>
       <p class="event-sub">Prelude Exhibition</p>
       <div class="details">
         <p>Pratt School of Design<br>Egress Gallery<br>October 1-17, 2026</p>
@@ -209,16 +232,6 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
   </section>
 
 
-  <section class="light about" id="about" aria-labelledby="about-title">
-    <div class="wrap">
-      <div class="section-head"><p class="label">About</p></div>
-      <h2 class="headline" id="about-title">Design, kept with intention.</h2>
-      <div>
-        <p>Brooklyn Design Archive is a living archive of designed objects. Furniture, lighting, books and ephemera, collected and studied in Brooklyn.</p>
-        <p>It treats design as culture worth keeping. The collection is lent to exhibitions, written about in Brooklyn Design Review and opened to visitors by appointment.</p>
-      </div>
-    </div>
-  </section>
 
   <section class="light about" id="founder" aria-labelledby="founder-title">
     <div class="wrap">
