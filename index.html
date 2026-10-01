@@ -79,15 +79,14 @@ a { color: inherit; }
 }
 
 /* Mission, the first screen */
-.mission .wrap {
-  display: flex; flex-direction: column;
-  min-height: calc(100svh - 64px);
-  padding-top: 0; padding-bottom: 48px;
-}
+/* Image strip from the Instagram grid, edge to edge */
+.strip { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); }
+.strip img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.mission .wrap { padding-top: 40px; padding-bottom: 48px; }
 .mission-title {
   font-family: var(--cond); font-weight: 500;
   font-size: min(17vw, 150px); line-height: 0.95; letter-spacing: -0.01em;
-  margin: auto 0 0; padding-top: 40px;
+  margin: 0;
 }
 .mission-text { margin-top: 32px; max-width: 34em; }
 .mission-text p { margin: 0 0 1em; }
@@ -193,7 +192,6 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
   .site-head .wrap { min-height: 76px; }
   .mark { font-size: 28px; }
   .head-btn { font-size: 17px; padding: 12px 18px 11px; }
-  .mission .wrap { min-height: calc(100svh - 76px); }
   .details { grid-template-columns: repeat(2, minmax(0, 22em)); gap: 32px; }
   .about .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
   .about .section-head { grid-column: 1 / -1; }
@@ -214,6 +212,12 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
 
 <main>
   <section class="mission" id="mission" aria-labelledby="mission-title">
+    <ul class="strip">
+      <li><img src="images/panton-green.jpg" width="640" height="800" alt="Panton Chair in halftone on green"></li>
+      <li><img src="images/judd-blue.jpg" width="640" height="800" alt="Donald Judd plywood chair in halftone on blue"></li>
+      <li><img src="images/panton-red.jpg" width="640" height="800" alt="Panton Chair in halftone on red"></li>
+      <li><img src="images/starck-orange.jpg" width="640" height="800" alt="Philippe Starck Hot Bertaa kettle in halftone on orange"></li>
+    </ul>
     <div class="wrap">
       <h1 class="mission-title" id="mission-title">Design, kept with intention.</h1>
       <div class="mission-text">
