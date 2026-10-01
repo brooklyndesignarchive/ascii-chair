@@ -87,7 +87,8 @@ a { color: inherit; }
   min-height: calc(100svh - 64px);
   padding-top: 28px; padding-bottom: 48px;
 }
-.mission .top { display: flex; justify-content: space-between; align-items: baseline; }
+.mission .top { margin: 0; }
+.mission .top .button { margin-top: 0; }
 .mission-title {
   font-family: var(--cond); font-weight: 500;
   font-size: min(17vw, 150px); line-height: 0.95; letter-spacing: -0.01em;
@@ -206,10 +207,7 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
 <main>
   <section class="mission" id="mission" aria-labelledby="mission-title">
     <div class="wrap">
-      <div class="top">
-        <p class="label">Mission</p>
-        <p class="label">2026</p>
-      </div>
+      <p class="top"><a class="button" href="https://mailchi.mp/a9b1e24c3b4c/chairbuilder3000" target="_blank" rel="noopener">Join the mailing list</a></p>
       <h1 class="mission-title" id="mission-title">Design, kept with intention.</h1>
       <div class="mission-text">
         <p>Brooklyn Design Archive is a living archive of designed objects. Furniture, lighting, books and ephemera, collected and studied in Brooklyn.</p>
