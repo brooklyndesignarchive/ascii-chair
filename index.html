@@ -82,6 +82,9 @@ a { color: inherit; }
 }
 
 /* Mission, the first screen */
+/* Image strip, edge to edge */
+.strip { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); }
+.strip img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
 .mission .wrap { padding-top: 32px; padding-bottom: 48px; }
 .mission-title {
   font-family: var(--cond); font-weight: 500;
@@ -107,51 +110,14 @@ a { color: inherit; }
   .head-btn .short { display: none; }
 }
 
-/* Announcement */
-.announce { background: var(--paper); color: var(--black); }
-.announce { overflow: hidden; }
-.announce .wrap { padding-top: 64px; padding-bottom: 72px; }
-.event-title {
-  font-family: var(--cond); font-weight: 700;
-  font-size: var(--headline);
-  line-height: 0.95; letter-spacing: -0.01em;
-  margin: 0;
-}
-.event-sub {
-  font-family: var(--cond); font-weight: 500;
-  font-size: clamp(26px, 7.4vw, 44px); line-height: 1.05;
-  margin: 0.55em 0 0;
-}
-.details {
-  margin: 44px 0 0; display: grid; gap: 22px;
-  font-size: 17px; line-height: 1.35;
-}
-.details p { margin: 0; }
-
-/* Button, from "Reserve a seat" in the brand book. Condensed Medium on a solid block */
-.button {
-  display: inline-block; margin-top: 36px;
-  font-family: var(--cond); font-weight: 500; font-size: 20px; line-height: 1;
-  text-decoration: none;
-  padding: 17px 24px 16px;
-  background: var(--black); color: var(--paper);
-  border: 1px solid var(--black);
-}
-.button:hover, .button:focus-visible { background: var(--paper); color: var(--black); }
-.button:focus-visible { outline: 2px solid var(--black); outline-offset: 3px; }
-
 /* Rules run to the edges of the screen, past the page margins */
-.site-head .wrap::after, .section-head::after, .foot::before {
+.site-head .wrap::after, .foot::before {
   content: ""; position: absolute; left: -100vw; right: -100vw;
   border-top: 1px solid currentColor;
 }
-.site-head .wrap::after, .section-head::after { bottom: 0; }
+.site-head .wrap::after { bottom: 0; }
 .foot::before { top: 0; }
-.site-head, section.light, .visit { overflow: hidden; }
-
-/* Sections on white */
-section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
-.section-head { position: relative; padding-bottom: 12px; margin-bottom: 28px; }
+.site-head, .visit { overflow: hidden; }
 
 /* Footer */
 .visit { background: var(--paper); color: var(--black); }
@@ -183,7 +149,6 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
   .site-head .wrap { min-height: 76px; }
   .mark { font-size: 28px; }
   .head-btn { font-size: 17px; padding: 12px 18px 11px; }
-  .details { grid-template-columns: repeat(2, minmax(0, 22em)); gap: 32px; }
 }
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
@@ -201,6 +166,12 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
 
 <main>
   <section class="mission" id="mission" aria-labelledby="mission-title">
+    <ul class="strip">
+      <li><img src="images/plywood-chair-green.jpg" width="640" height="800" alt="Molded plywood chair for children in halftone on green"></li>
+      <li><img src="images/judd-blue.jpg" width="640" height="800" alt="Donald Judd plywood chair in halftone on blue"></li>
+      <li><img src="images/panton-red.jpg" width="640" height="800" alt="Panton Chair in halftone on red"></li>
+      <li><img src="images/nesso-orange.jpg" width="640" height="800" alt="Nesso table lamp in halftone on orange"></li>
+    </ul>
     <div class="wrap">
       <h1 class="mission-title" id="mission-title">Design matters.</h1>
       <div class="mission-text">
@@ -209,22 +180,6 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
       </div>
     </div>
   </section>
-
-  <section class="announce" aria-labelledby="event-title">
-    <div class="wrap">
-      <div class="section-head" aria-hidden="true"></div>
-      <h2 class="event-title" id="event-title">Materials<br>that<br>Matter</h2>
-      <p class="event-sub">Prelude Exhibition</p>
-      <div class="details">
-        <p>Pratt School of Design<br>Egress Gallery<br>October 1-17, 2026</p>
-        <p>Thonet No. 14, LC7 and Panton Chair lent by Brooklyn Design Archive</p>
-      </div>
-      <p><a class="button" href="https://mailchi.mp/a9b1e24c3b4c/chairbuilder3000" target="_blank" rel="noopener">Join the mailing list</a></p>
-    </div>
-  </section>
-
-
-
 </main>
 
 <footer class="visit">
