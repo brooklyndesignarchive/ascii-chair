@@ -77,72 +77,9 @@ a { color: inherit; }
   font-size: 20px; letter-spacing: -0.01em; line-height: 1;
   text-decoration: none; white-space: nowrap;
 }
-/* Menu button. Two lines, opens the full-screen menu */
-.menu-btn {
-  appearance: none; background: none; border: 0; color: inherit; cursor: pointer;
-  width: 44px; height: 44px; margin-right: -10px; padding: 0;
-  display: grid; place-content: center; gap: 7px;
-}
-.menu-btn span { display: block; width: 26px; height: 1.5px; background: currentColor; }
-.menu-btn:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
-
-/* Full-screen menu, on black */
-.menu {
-  position: fixed; inset: 0; z-index: 10;
-  background: var(--black); color: var(--paper);
-  display: flex; flex-direction: column;
-  padding: env(safe-area-inset-top) var(--m) calc(28px + env(safe-area-inset-bottom));
-  overflow-y: auto; overscroll-behavior: contain;
-  visibility: hidden; opacity: 0;
-  transition: opacity .25s ease, visibility 0s linear .25s;
-}
-.menu.is-open { visibility: visible; opacity: 1; transition: opacity .25s ease; }
-.menu-top { display: flex; justify-content: flex-end; align-items: center; gap: 18px; min-height: 64px; }
-.pill {
-  font-family: var(--std); font-size: 15px; line-height: 1; text-decoration: none;
-  padding: 9px 16px 10px; border: 1px solid currentColor; border-radius: 999px;
-}
-.pill:hover, .pill:focus-visible { background: var(--paper); color: var(--black); outline: none; }
-.close-btn {
-  appearance: none; background: none; border: 0; color: inherit; cursor: pointer;
-  width: 44px; height: 44px; margin-right: -10px; position: relative;
-}
-.close-btn::before, .close-btn::after {
-  content: ""; position: absolute; left: 7px; right: 7px; top: 50%;
-  height: 1.5px; background: currentColor;
-}
-.close-btn::before { transform: rotate(45deg); }
-.close-btn::after { transform: rotate(-45deg); }
-.close-btn:focus-visible { outline: 2px solid currentColor; }
-.menu-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(255,255,255,.35); }
-.menu-list li { border-bottom: 1px solid rgba(255,255,255,.35); }
-.menu-list a {
-  display: flex; align-items: center; gap: .18em;
-  font-family: var(--cond); font-weight: 500;
-  font-size: min(17vw, 132px); line-height: 1; letter-spacing: -0.01em;
-  text-decoration: none; padding: .06em 0 .1em;
-}
-.menu-list a:hover, .menu-list a:focus-visible { outline: none; opacity: .6; }
-/* Glowing dot on the current page */
-.menu-list a[aria-current]::before {
-  content: ""; flex: none; width: .26em; height: .26em; border-radius: 50%;
-  background: var(--paper); box-shadow: 0 0 .12em .04em rgba(255,255,255,.9); filter: blur(.5px);
-}
-.menu-foot {
-  margin-top: auto; padding-top: 36px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 28px 16px; align-items: end;
-  font-size: 15px; line-height: 1.3;
-}
-.menu-foot p { margin: 0; }
-.menu-foot .status { color: var(--grey-45); }
-.menu-foot .big {
-  grid-column: 1 / -1; justify-self: end;
-  font-family: var(--cond); font-weight: 500; font-size: min(11vw, 64px); line-height: 1;
-  text-decoration: none;
-}
-.menu-foot .big:hover, .menu-foot .big:focus-visible { opacity: .6; outline: none; }
-.live-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--paper); box-shadow: 0 0 6px 1px rgba(255,255,255,.8); margin-right: 8px; vertical-align: 2px; }
-html.menu-open, html.menu-open body { overflow: hidden; }
+.nav { display: flex; gap: 14px; margin-left: 16px; font-family: var(--cond); font-weight: 500; font-size: 17px; }
+.nav a { text-decoration: none; padding: 10px 0; }
+.nav a:hover, .nav a:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
 
 /* Announcement */
 .announce { background: var(--paper); color: var(--black); }
@@ -220,9 +157,10 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
   font-family: var(--cond); font-weight: 500; font-size: 25px; letter-spacing: -0.01em;
 }
 
-/* Smallest phones */
+/* Smallest phones: keep the full name and the navigation on one line */
 @media (max-width: 359px) {
   .mark { font-size: 16px; }
+  .nav { font-size: 15px; gap: 10px; margin-left: 10px; }
 }
 
 /* Wider screens: two-column about and founder */
@@ -241,40 +179,17 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
 }
 </style>
 </head>
-<body id="top">
+<body>
 
 <header class="site-head">
   <div class="wrap">
     <a class="mark" href="./">Brooklyn Design Archive</a>
-    <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+    <nav class="nav" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#founder">Founder</a>
+    </nav>
   </div>
 </header>
-
-<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
-  <div class="menu-top">
-    <a class="pill" href="https://mailchi.mp/a9b1e24c3b4c/chairbuilder3000" target="_blank" rel="noopener">Mailing list</a>
-    <button class="close-btn" type="button" aria-label="Close menu"></button>
-  </div>
-  <nav aria-label="Main">
-    <ul class="menu-list">
-      <li><a href="#top" aria-current="page">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#founder">Founder</a></li>
-      <li><a href="https://mailchi.mp/a9b1e24c3b4c/chairbuilder3000" target="_blank" rel="noopener">Mailing list</a></li>
-    </ul>
-  </nav>
-  <div class="menu-foot">
-    <div>
-      <p><span class="live-dot" aria-hidden="true"></span>Brooklyn</p>
-      <p class="status" id="nyc-time">New York</p>
-    </div>
-    <div>
-      <p>Pratt, Egress Gallery</p>
-      <p class="status">October 1-17, 2026</p>
-    </div>
-    <a class="big" href="https://www.instagram.com/brooklyndesignarchive/" rel="me">Instagram</a>
-  </div>
-</div>
 
 <main>
   <section class="announce" aria-labelledby="event-title">
@@ -330,40 +245,5 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
   </div>
 </footer>
 
-<script>
-// Full-screen menu: open, close, Escape, and the live Brooklyn time
-(function () {
-  var root = document.documentElement;
-  var menu = document.getElementById('menu');
-  var openBtn = document.querySelector('.menu-btn');
-  var closeBtn = menu.querySelector('.close-btn');
-  var timeEl = document.getElementById('nyc-time');
-  var timer;
-
-  function tick() {
-    var d = new Date();
-    var date = d.toLocaleDateString('en-GB', { timeZone: 'America/New_York', day: 'numeric', month: 'long', year: 'numeric' });
-    var time = d.toLocaleTimeString('en-GB', { timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit', hour12: false }).replace(':', '.');
-    // The trial font has no colon, so the time uses a period
-    timeEl.textContent = date + ', ' + time;
-  }
-  function open() {
-    menu.classList.add('is-open'); root.classList.add('menu-open');
-    openBtn.setAttribute('aria-expanded', 'true');
-    tick(); timer = setInterval(tick, 15000);
-    closeBtn.focus();
-  }
-  function close() {
-    menu.classList.remove('is-open'); root.classList.remove('menu-open');
-    openBtn.setAttribute('aria-expanded', 'false');
-    clearInterval(timer);
-    openBtn.focus({ preventScroll: true });
-  }
-  openBtn.addEventListener('click', open);
-  closeBtn.addEventListener('click', close);
-  menu.querySelectorAll('.menu-list a[href^="#"]').forEach(function (a) { a.addEventListener('click', close); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && menu.classList.contains('is-open')) close(); });
-})();
-</script>
 </body>
 </html>
