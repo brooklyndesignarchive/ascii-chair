@@ -107,6 +107,18 @@ a { color: inherit; }
 }
 .details p { margin: 0; }
 
+/* Button, from "Reserve a seat" in the brand book. Condensed Medium on a solid block */
+.button {
+  display: inline-block; margin-top: 36px;
+  font-family: var(--cond); font-weight: 500; font-size: 20px; line-height: 1;
+  text-decoration: none;
+  padding: 17px 24px 16px;
+  background: var(--paper); color: var(--black);
+  border: 1px solid var(--paper);
+}
+.button:hover, .button:focus-visible { background: var(--black); color: var(--paper); }
+.button:focus-visible { outline: 2px solid var(--paper); outline-offset: 3px; }
+
 /* Sections on white */
 section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
 .section-head { padding-bottom: 12px; border-bottom: 1px solid var(--black); margin-bottom: 28px; }
@@ -176,6 +188,7 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
         <p>Pratt School of Design<br>Egress Gallery<br>October 1-17, 2026</p>
         <p>Thonet No. 14, LC7 and Panton Chair lent by Brooklyn Design Archive</p>
       </div>
+      <p><a class="button" href="MAILCHIMP_SIGNUP_URL" target="_blank" rel="noopener">Join the mailing list</a></p>
     </div>
   </section>
 
@@ -206,6 +219,7 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
 <footer class="visit">
   <div class="wrap">
     <div class="links">
+      <a href="MAILCHIMP_SIGNUP_URL" target="_blank" rel="noopener">Mailing list</a>
       <a href="https://www.instagram.com/brooklyndesignarchive/" rel="me">Instagram</a>
     </div>
     <div class="foot">
