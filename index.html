@@ -64,7 +64,7 @@ a { color: inherit; }
 
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--m); }
 
-/* Header, website spec: BDA left, navigation right, rule below */
+/* Header: the full name, rule below */
 .site-head { background: var(--paper); color: var(--black); }
 .site-head .wrap {
   display: flex; align-items: center; justify-content: space-between;
@@ -74,12 +74,9 @@ a { color: inherit; }
 }
 .mark {
   font-family: var(--cond); font-weight: 500;
-  font-size: 18px; letter-spacing: -0.01em; line-height: 1;
+  font-size: 20px; letter-spacing: -0.01em; line-height: 1;
   text-decoration: none; white-space: nowrap;
 }
-.nav { display: flex; gap: 12px; margin-left: 12px; font-family: var(--cond); font-weight: 500; font-size: 16px; }
-.nav a { text-decoration: none; padding: 10px 0; }
-.nav a:hover, .nav a:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
 
 /* Mission, the first screen */
 .mission .wrap {
@@ -169,19 +166,12 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
   font-family: var(--cond); font-weight: 500; font-size: 25px; letter-spacing: -0.01em;
 }
 
-/* Smallest phones: keep the full name and the navigation on one line */
-@media (max-width: 359px) {
-  .mark { font-size: 16px; }
-  .nav { font-size: 15px; gap: 10px; margin-left: 10px; }
-}
-
 /* Wider screens: two-column about and founder */
 @media (min-width: 760px) {
   body { font-size: 18px; }
   .label { font-size: 13px; }
   .site-head .wrap { min-height: 76px; }
   .mark { font-size: 28px; }
-  .nav { font-size: 18px; gap: 16px; }
   .mission .wrap { min-height: calc(100svh - 76px); }
   .details { grid-template-columns: repeat(2, minmax(0, 22em)); gap: 32px; }
   .about .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
@@ -197,10 +187,6 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
 <header class="site-head">
   <div class="wrap">
     <a class="mark" href="./">Brooklyn Design Archive</a>
-    <nav class="nav" aria-label="Main">
-      <a href="#mission">Mission</a>
-      <a href="#founder">Founder</a>
-    </nav>
   </div>
 </header>
 
