@@ -2,7 +2,7 @@
 
 A Jean Prouvé Standard chair (Vitra), extracted from a CAD file and rendered as a rotating ASCII animation.
 
-**[View it live](https://brooklyndesignarchive.github.io/ascii-chair/)** — drag horizontally to spin, vertically to tilt.
+**[View it live](https://brooklyndesignarchive.com/chair/)** — drag horizontally to spin, vertically to tilt.
 
 ## How it works
 
@@ -12,6 +12,8 @@ A Jean Prouvé Standard chair (Vitra), extracted from a CAD file and rendered as
 
 ## Files
 
-- `index.html` — the live ASCII viewer (self-contained, no dependencies)
+- `index.html` — the Brooklyn Design Archive landing page (Materials that Matter, Pratt)
+- `fonts/` — GT America web fonts (Grilli Type trial, student use)
+- `chair/index.html` — the live ASCII viewer (self-contained, no dependencies)
 - `render.py` — the original Python renderer / mesh-extraction pipeline
 - `chair_spin.py` + `chair_frames.json` — terminal version: `python3 chair_spin.py`
