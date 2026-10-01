@@ -94,6 +94,18 @@ a { color: inherit; }
 .mission-text { margin-top: 32px; max-width: 34em; }
 .mission-text p { margin: 0 0 1em; }
 
+/* Button, from "Reserve a seat" in the brand book. Condensed Medium on a solid block */
+.button {
+  display: inline-block; margin-top: 16px;
+  font-family: var(--cond); font-weight: 500; font-size: 20px; line-height: 1;
+  text-decoration: none;
+  padding: 17px 24px 16px;
+  background: var(--black); color: var(--paper);
+  border: 1px solid var(--black);
+}
+.button:hover, .button:focus-visible { background: var(--paper); color: var(--black); }
+.button:focus-visible { outline: 2px solid var(--black); outline-offset: 3px; }
+
 /* Mailing list button in the header. Short label on phones */
 .head-btn {
   flex: none; margin-left: 12px;
@@ -121,9 +133,7 @@ a { color: inherit; }
 
 /* Footer */
 .visit { background: var(--paper); color: var(--black); }
-.visit .wrap { padding-top: 48px; padding-bottom: calc(40px + env(safe-area-inset-bottom)); }
-.visit .links { display: grid; gap: 6px; margin: 0 0 56px; font-size: 19px; }
-.visit .links a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; padding: 6px 0; }
+.visit .wrap { padding-top: 0; padding-bottom: calc(40px + env(safe-area-inset-bottom)); }
 .foot {
   display: flex; justify-content: space-between; align-items: flex-end;
   position: relative; padding-top: 16px;
@@ -179,15 +189,13 @@ a { color: inherit; }
         <p>A new cultural project advancing design in Brooklyn, New York.</p>
         <p>Advancing the understanding of significant artifacts from the fields of furniture, industrial design and architecture.</p>
       </div>
+      <p><a class="button" href="https://mailchi.mp/a9b1e24c3b4c/chairbuilder3000" target="_blank" rel="noopener">Join the mailing list</a></p>
     </div>
   </section>
 </main>
 
 <footer class="visit">
   <div class="wrap">
-    <div class="links">
-      <a href="https://mailchi.mp/a9b1e24c3b4c/chairbuilder3000" target="_blank" rel="noopener">Mailing list</a>
-    </div>
     <div class="foot">
       <p class="label">Brooklyn Design Archive<br>Brooklyn, New York<br><a href="https://www.instagram.com/brooklyndesignarchive/" rel="me">Instagram</a></p>
       <div class="roundel" aria-hidden="true">BDA</div>
