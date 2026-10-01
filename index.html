@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Brooklyn Design Archive</title>
 <meta name="description" content="Materials that Matter. Prelude Exhibition at Pratt, Egress Gallery, October 1-17, 2026. Thonet No. 14, LC7 and Panton Chair lent by Brooklyn Design Archive.">
-<meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#ffffff">
 <meta property="og:title" content="Materials that Matter, Brooklyn Design Archive">
 <meta property="og:description" content="Prelude Exhibition. Pratt, Egress Gallery, October 1-17, 2026.">
 <meta property="og:url" content="https://brooklyndesignarchive.com/">
@@ -65,7 +65,7 @@ a { color: inherit; }
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--m); }
 
 /* Header, website spec: BDA left, navigation right, rule below */
-.site-head { background: var(--black); color: var(--paper); }
+.site-head { background: var(--paper); color: var(--black); }
 .site-head .wrap {
   display: flex; align-items: center; justify-content: space-between;
   min-height: 64px;
@@ -81,8 +81,8 @@ a { color: inherit; }
 .nav a { text-decoration: none; padding: 10px 0; }
 .nav a:hover, .nav a:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
 
-/* Announcement, on black */
-.announce { background: var(--black); color: var(--paper); }
+/* Announcement */
+.announce { background: var(--paper); color: var(--black); }
 .announce .wrap {
   display: flex; flex-direction: column;
   min-height: calc(100svh - 64px);
@@ -113,11 +113,11 @@ a { color: inherit; }
   font-family: var(--cond); font-weight: 500; font-size: 20px; line-height: 1;
   text-decoration: none;
   padding: 17px 24px 16px;
-  background: var(--paper); color: var(--black);
-  border: 1px solid var(--paper);
+  background: var(--black); color: var(--paper);
+  border: 1px solid var(--black);
 }
-.button:hover, .button:focus-visible { background: var(--black); color: var(--paper); }
-.button:focus-visible { outline: 2px solid var(--paper); outline-offset: 3px; }
+.button:hover, .button:focus-visible { background: var(--paper); color: var(--black); }
+.button:focus-visible { outline: 2px solid var(--black); outline-offset: 3px; }
 
 /* Rules run to the edges of the screen, past the page margins */
 .site-head .wrap::after, .section-head::after, .foot::before {
@@ -140,8 +140,8 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
 }
 .about p { margin: 0 0 1.1em; max-width: 34em; }
 
-/* Footer, on black */
-.visit { background: var(--black); color: var(--paper); }
+/* Footer */
+.visit { background: var(--paper); color: var(--black); }
 .visit .wrap { padding-top: 48px; padding-bottom: calc(40px + env(safe-area-inset-bottom)); }
 .visit .links { display: grid; gap: 6px; margin: 0 0 56px; font-size: 19px; }
 .visit .links a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; padding: 6px 0; }
@@ -152,7 +152,7 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
 /* Profile mark. BDA centered in the circle, letter height about a quarter of it */
 .roundel {
   width: 72px; height: 72px; border-radius: 50%;
-  background: var(--paper); color: var(--black);
+  background: var(--black); color: var(--paper);
   display: grid; place-items: center;
   font-family: var(--cond); font-weight: 500; font-size: 25px; letter-spacing: -0.01em;
 }
