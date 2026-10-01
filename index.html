@@ -74,10 +74,10 @@ a { color: inherit; }
 }
 .mark {
   font-family: var(--cond); font-weight: 500;
-  font-size: 28px; letter-spacing: -0.01em; line-height: 1;
-  text-decoration: none;
+  font-size: 20px; letter-spacing: -0.01em; line-height: 1;
+  text-decoration: none; white-space: nowrap;
 }
-.nav { display: flex; gap: 16px; font-family: var(--cond); font-weight: 500; font-size: 17px; }
+.nav { display: flex; gap: 14px; margin-left: 16px; font-family: var(--cond); font-weight: 500; font-size: 17px; }
 .nav a { text-decoration: none; padding: 10px 0; }
 .nav a:hover, .nav a:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
 
@@ -148,11 +148,18 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
   font-family: var(--cond); font-weight: 500; font-size: 25px; letter-spacing: -0.01em;
 }
 
+/* Smallest phones: keep the full name and the navigation on one line */
+@media (max-width: 359px) {
+  .mark { font-size: 16px; }
+  .nav { font-size: 15px; gap: 10px; margin-left: 10px; }
+}
+
 /* Wider screens: two-column about and founder */
 @media (min-width: 760px) {
   body { font-size: 18px; }
   .label { font-size: 13px; }
   .site-head .wrap { min-height: 76px; }
+  .mark { font-size: 28px; }
   .announce .wrap { min-height: calc(100svh - 76px); }
   .details { grid-template-columns: repeat(2, minmax(0, 22em)); gap: 32px; }
   .about .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
@@ -167,7 +174,7 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
 
 <header class="site-head">
   <div class="wrap">
-    <a class="mark" href="./" aria-label="Brooklyn Design Archive, home">BDA</a>
+    <a class="mark" href="./">Brooklyn Design Archive</a>
     <nav class="nav" aria-label="Main">
       <a href="#about">About</a>
       <a href="#founder">Founder</a>
