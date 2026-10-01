@@ -81,31 +81,49 @@ a { color: inherit; }
 .nav a { text-decoration: none; padding: 10px 0; }
 .nav a:hover, .nav a:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
 
-/* Announcement, on black */
-.announce { background: var(--black); color: var(--paper); }
-.announce .wrap {
+/* Initiatives. Swipeable cards on phones, side by side on wider screens */
+.initiatives { background: var(--black); color: var(--paper); padding: 20px 0 calc(40px + env(safe-area-inset-bottom)); }
+.cards {
+  display: grid; grid-auto-flow: column; grid-auto-columns: 86%;
+  gap: 12px;
+  overflow-x: auto; overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--m);
+  padding: 0 var(--m);
+  scrollbar-width: none;
+}
+.cards::-webkit-scrollbar { display: none; }
+.cards:focus-visible { outline: 2px solid var(--paper); outline-offset: -2px; }
+.card {
+  container-type: inline-size;
+  scroll-snap-align: start;
   display: flex; flex-direction: column;
-  min-height: calc(100svh - 64px);
-  padding-top: 28px; padding-bottom: calc(var(--m) + env(safe-area-inset-bottom));
+  min-height: min(calc(100svh - 200px), 640px);
+  padding: 22px 20px 24px;
+  border: 1px solid var(--paper);
 }
-.announce .top { display: flex; justify-content: space-between; align-items: baseline; }
-.event-title {
+.card--black { background: var(--black); color: var(--paper); }
+.card--white { background: var(--paper); color: var(--black); }
+.card .top { display: flex; justify-content: space-between; align-items: baseline; }
+.card-title {
   font-family: var(--cond); font-weight: 700;
-  /* "Materials" is about 3.7em wide; 22vw keeps it inside the 8 percent margins */
-  font-size: min(22vw, 200px);
+  /* "Materials" is about 3.8em wide, so size it to the card */
+  font-size: min(25.5cqi, 150px);
   line-height: 0.92; letter-spacing: -0.01em;
-  margin: auto 0 0; padding-top: 48px;
+  margin: auto 0 0; padding-top: 40px;
 }
-.event-sub {
+.card-sub {
   font-family: var(--cond); font-weight: 500;
-  font-size: clamp(26px, 7.4vw, 44px); line-height: 1.05;
-  margin: 0.55em 0 0;
+  font-size: clamp(22px, 8cqi, 36px); line-height: 1.05;
+  margin: 0.5em 0 0;
 }
 .details {
-  margin: 44px 0 0; display: grid; gap: 22px;
-  font-size: 17px; line-height: 1.35;
+  margin: 28px 0 0; display: grid; gap: 16px;
+  font-size: 16px; line-height: 1.35;
 }
 .details p { margin: 0; }
+.below { padding: 0 var(--m); margin-top: 20px; }
+.below .button { margin-top: 0; }
 
 /* Button, from "Reserve a seat" in the brand book. Condensed Medium on a solid block */
 .button {
@@ -160,8 +178,10 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
   .label { font-size: 13px; }
   .site-head .wrap { min-height: 76px; }
   .mark { font-size: 28px; }
-  .announce .wrap { min-height: calc(100svh - 76px); }
-  .details { grid-template-columns: repeat(2, minmax(0, 22em)); gap: 32px; }
+  .initiatives { padding-top: 32px; }
+  .cards { max-width: var(--max); margin: 0 auto; grid-auto-flow: row; grid-template-columns: 1fr 1fr; gap: 24px; overflow: visible; }
+  .card { min-height: 560px; padding: 28px; }
+  .below { max-width: var(--max); margin: 28px auto 0; }
   .about .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
   .about .section-head { grid-column: 1 / -1; }
 }
@@ -183,22 +203,37 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
 </header>
 
 <main>
-  <section class="announce" aria-labelledby="event-title">
-    <div class="wrap">
-      <div class="top">
-        <p class="label">On loan</p>
-        <p class="label">2026</p>
-      </div>
-      <h1 class="event-title" id="event-title">Materials<br>that<br>Matter</h1>
-      <p class="event-sub">Prelude Exhibition</p>
-      <div class="details">
-        <p>Pratt School of Design<br>Egress Gallery<br>October 1-17, 2026</p>
-        <p>Thonet No. 14, LC7 and Panton Chair lent by Brooklyn Design Archive</p>
-      </div>
-      <p><a class="button" href="MAILCHIMP_SIGNUP_URL" target="_blank" rel="noopener">Join the mailing list</a></p>
+  <section class="initiatives" aria-label="Initiatives">
+    <div class="cards" id="cards" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Initiatives, swipe for more">
+      <article class="card card--black" aria-roledescription="slide" aria-label="1 of 2">
+        <div class="top">
+          <p class="label">On loan</p>
+          <p class="label">1 of 2</p>
+        </div>
+        <h1 class="card-title">Materials<br>that<br>Matter</h1>
+        <p class="card-sub">Prelude Exhibition</p>
+        <div class="details">
+          <p>Pratt School of Design<br>Egress Gallery<br>October 1-17, 2026</p>
+          <p>Thonet No. 14, LC7 and Panton Chair lent by Brooklyn Design Archive</p>
+        </div>
+      </article>
+      <article class="card card--white" aria-roledescription="slide" aria-label="2 of 2">
+        <div class="top">
+          <p class="label">Archive</p>
+          <p class="label">2 of 2</p>
+        </div>
+        <h2 class="card-title">Design<br>Library</h2>
+        <p class="card-sub">The archive</p>
+        <div class="details">
+          <p>A living archive of designed objects. Furniture, lighting, books and ephemera, collected and studied in Brooklyn.</p>
+          <p>Lent to exhibitions and written about in Brooklyn Design Review.</p>
+        </div>
+      </article>
+    </div>
+    <div class="below">
+      <a class="button" href="MAILCHIMP_SIGNUP_URL" target="_blank" rel="noopener">Join the mailing list</a>
     </div>
   </section>
-
 
   <section class="light about" id="about" aria-labelledby="about-title">
     <div class="wrap">
@@ -235,6 +270,7 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
     </div>
   </div>
 </footer>
+
 
 </body>
 </html>
