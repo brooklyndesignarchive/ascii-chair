@@ -79,9 +79,11 @@ a { color: inherit; }
 }
 
 /* Mission, the first screen */
-/* Image strip from the Instagram grid, edge to edge */
-.strip { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); }
-.strip img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+/* Feature image, edge to edge, with a caption below */
+.feature { margin: 0; }
+.feature img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; max-height: 80svh; object-fit: cover; }
+.mission .feature figcaption { display: grid; gap: 4px; padding-top: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--rule); }
+.feature-name { font-family: var(--cond); font-weight: 500; font-size: 18px; line-height: 1.1; }
 .mission .wrap { padding-top: 40px; padding-bottom: 48px; }
 .mission-title {
   font-family: var(--cond); font-weight: 500;
@@ -212,12 +214,13 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
 
 <main>
   <section class="mission" id="mission" aria-labelledby="mission-title">
-    <ul class="strip">
-      <li><img src="images/plywood-chair-green.jpg" width="640" height="800" alt="Molded plywood child's chair in halftone on green"></li>
-      <li><img src="images/judd-blue.jpg" width="640" height="800" alt="Donald Judd plywood chair in halftone on blue"></li>
-      <li><img src="images/panton-red.jpg" width="640" height="800" alt="Panton Chair in halftone on red"></li>
-      <li><img src="images/nesso-orange.jpg" width="640" height="800" alt="Nesso table lamp in halftone on orange"></li>
-    </ul>
+    <figure class="feature">
+      <img src="images/eames-child-chair-green.jpg" width="960" height="1200" alt="Charles and Ray Eames molded plywood chair for children, in halftone on green">
+      <figcaption class="wrap">
+        <span class="feature-name">Chair for children</span>
+        <span class="label muted">Charles and Ray Eames, 1945. Molded plywood</span>
+      </figcaption>
+    </figure>
     <div class="wrap">
       <h1 class="mission-title" id="mission-title">Design matters.</h1>
       <div class="mission-text">
