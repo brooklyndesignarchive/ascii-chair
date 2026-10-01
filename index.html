@@ -70,7 +70,7 @@ a { color: inherit; }
   display: flex; align-items: center; justify-content: space-between;
   min-height: 64px;
   padding-top: env(safe-area-inset-top);
-  border-bottom: 1px solid currentColor;
+  position: relative;
 }
 .mark {
   font-family: var(--cond); font-weight: 500;
@@ -119,9 +119,18 @@ a { color: inherit; }
 .button:hover, .button:focus-visible { background: var(--black); color: var(--paper); }
 .button:focus-visible { outline: 2px solid var(--paper); outline-offset: 3px; }
 
+/* Rules run to the edges of the screen, past the page margins */
+.site-head .wrap::after, .section-head::after, .foot::before {
+  content: ""; position: absolute; left: -100vw; right: -100vw;
+  border-top: 1px solid currentColor;
+}
+.site-head .wrap::after, .section-head::after { bottom: 0; }
+.foot::before { top: 0; }
+.site-head, section.light, .visit { overflow: hidden; }
+
 /* Sections on white */
 section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
-.section-head { padding-bottom: 12px; border-bottom: 1px solid var(--black); margin-bottom: 28px; }
+.section-head { position: relative; padding-bottom: 12px; margin-bottom: 28px; }
 
 /* About */
 .headline {
@@ -138,7 +147,7 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
 .visit .links a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; padding: 6px 0; }
 .foot {
   display: flex; justify-content: space-between; align-items: flex-end;
-  border-top: 1px solid currentColor; padding-top: 16px;
+  position: relative; padding-top: 16px;
 }
 /* Profile mark. BDA centered in the circle, letter height about a quarter of it */
 .roundel {
