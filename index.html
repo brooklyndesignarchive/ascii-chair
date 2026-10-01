@@ -74,7 +74,7 @@ a { color: inherit; }
 }
 .mark {
   font-family: var(--cond); font-weight: 500;
-  font-size: 20px; letter-spacing: -0.01em; line-height: 1;
+  font-size: 18px; letter-spacing: -0.01em; line-height: 1;
   text-decoration: none; white-space: nowrap;
 }
 
@@ -82,10 +82,8 @@ a { color: inherit; }
 .mission .wrap {
   display: flex; flex-direction: column;
   min-height: calc(100svh - 64px);
-  padding-top: 28px; padding-bottom: 48px;
+  padding-top: 0; padding-bottom: 48px;
 }
-.mission .top { margin: 0; }
-.mission .top .button { margin-top: 0; }
 .mission-title {
   font-family: var(--cond); font-weight: 500;
   font-size: min(17vw, 150px); line-height: 0.95; letter-spacing: -0.01em;
@@ -93,6 +91,22 @@ a { color: inherit; }
 }
 .mission-text { margin-top: 32px; max-width: 34em; }
 .mission-text p { margin: 0 0 1em; }
+
+/* Mailing list button in the header. Short label on phones */
+.head-btn {
+  flex: none; margin-left: 12px;
+  font-family: var(--cond); font-weight: 500; font-size: 15px; line-height: 1;
+  text-decoration: none; white-space: nowrap;
+  padding: 10px 12px 9px;
+  background: var(--black); color: var(--paper); border: 1px solid var(--black);
+}
+.head-btn:hover, .head-btn:focus-visible { background: var(--paper); color: var(--black); }
+.head-btn:focus-visible { outline: 2px solid var(--black); outline-offset: 2px; }
+.head-btn .long { display: none; }
+@media (min-width: 420px) {
+  .head-btn .long { display: inline; }
+  .head-btn .short { display: none; }
+}
 
 /* Announcement */
 .announce { background: var(--paper); color: var(--black); }
@@ -166,12 +180,19 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
   font-family: var(--cond); font-weight: 500; font-size: 25px; letter-spacing: -0.01em;
 }
 
+/* Smallest phones */
+@media (max-width: 359px) {
+  .mark { font-size: 16px; }
+  .head-btn { font-size: 14px; padding: 9px 10px 8px; margin-left: 8px; }
+}
+
 /* Wider screens: two-column about and founder */
 @media (min-width: 760px) {
   body { font-size: 18px; }
   .label { font-size: 13px; }
   .site-head .wrap { min-height: 76px; }
   .mark { font-size: 28px; }
+  .head-btn { font-size: 17px; padding: 12px 18px 11px; }
   .mission .wrap { min-height: calc(100svh - 76px); }
   .details { grid-template-columns: repeat(2, minmax(0, 22em)); gap: 32px; }
   .about .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
@@ -187,13 +208,13 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
 <header class="site-head">
   <div class="wrap">
     <a class="mark" href="./">Brooklyn Design Archive</a>
+    <a class="head-btn" href="https://mailchi.mp/a9b1e24c3b4c/chairbuilder3000" target="_blank" rel="noopener"><span class="long">Join the m</span><span class="short">M</span>ailing list</a>
   </div>
 </header>
 
 <main>
   <section class="mission" id="mission" aria-labelledby="mission-title">
     <div class="wrap">
-      <p class="top"><a class="button" href="https://mailchi.mp/a9b1e24c3b4c/chairbuilder3000" target="_blank" rel="noopener">Join the mailing list</a></p>
       <h1 class="mission-title" id="mission-title">Design, kept with intention.</h1>
       <div class="mission-text">
         <p>Brooklyn Design Archive is a living archive of designed objects. Furniture, lighting, books and ephemera, collected and studied in Brooklyn.</p>
