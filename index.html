@@ -153,14 +153,6 @@ a { color: inherit; }
 section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
 .section-head { position: relative; padding-bottom: 12px; margin-bottom: 28px; }
 
-/* About */
-.headline {
-  font-family: var(--cond); font-weight: 500;
-  font-size: var(--headline); line-height: 0.95; letter-spacing: -0.01em;
-  margin: 0 0 32px;
-}
-.about p { margin: 0 0 1.1em; max-width: 34em; }
-
 /* Footer */
 .visit { background: var(--paper); color: var(--black); }
 .visit .wrap { padding-top: 48px; padding-bottom: calc(40px + env(safe-area-inset-bottom)); }
@@ -184,7 +176,7 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
   .head-btn { font-size: 14px; padding: 9px 10px 8px; margin-left: 8px; }
 }
 
-/* Wider screens: two-column about and founder */
+/* Wider screens */
 @media (min-width: 760px) {
   body { font-size: 18px; }
   .label { font-size: 13px; }
@@ -192,8 +184,6 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
   .mark { font-size: 28px; }
   .head-btn { font-size: 17px; padding: 12px 18px 11px; }
   .details { grid-template-columns: repeat(2, minmax(0, 22em)); gap: 32px; }
-  .about .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
-  .about .section-head { grid-column: 1 / -1; }
 }
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
@@ -235,16 +225,6 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
 
 
 
-  <section class="light about" id="founder" aria-labelledby="founder-title">
-    <div class="wrap">
-      <div class="section-head"><p class="label">Founder</p></div>
-      <h2 class="headline" id="founder-title">Gerardo Torres Davila</h2>
-      <div>
-        <p>Gerardo Torres Davila is an art director and cultural critic based in Brooklyn. He has written for the Interior Review and other publications.</p>
-        <p>He founded Brooklyn Design Archive to keep designed objects in use, on view and in conversation.</p>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer class="visit">
