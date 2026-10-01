@@ -107,29 +107,9 @@ a { color: inherit; }
 }
 .details p { margin: 0; }
 
-/* Spec rows, archive entry style. Mono label left, value right */
-.specs { margin: 0; }
-.specs div {
-  display: grid; grid-template-columns: 7.5em 1fr; gap: 12px;
-  padding: 12px 0 14px; border-top: 1px solid var(--rule);
-}
-.specs dt { font-family: var(--mono); font-size: 12px; color: var(--grey-45); padding-top: 4px; }
-.specs dd { margin: 0; }
-
 /* Sections on white */
 section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
 .section-head { padding-bottom: 12px; border-bottom: 1px solid var(--black); margin-bottom: 28px; }
-
-/* On loan: the three chairs */
-.entries { list-style: none; margin: 0; padding: 0; display: grid; gap: 48px; }
-.entry .label { margin-bottom: 14px; }
-.entry h3 {
-  font-family: var(--cond); font-weight: 500;
-  font-size: clamp(48px, 14vw, 72px); line-height: 0.95; letter-spacing: -0.01em;
-  margin: 0;
-}
-.entry .by { font-size: 19px; margin: 14px 0 22px; }
-.entry .note { margin: 18px 0 0; }
 
 /* About */
 .headline {
@@ -139,14 +119,10 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
 }
 .about p { margin: 0 0 1.1em; max-width: 34em; }
 
-/* Visit, on black */
+/* Footer, on black */
 .visit { background: var(--black); color: var(--paper); }
-.visit .wrap { padding-top: 64px; padding-bottom: calc(40px + env(safe-area-inset-bottom)); }
-.visit h2 {
-  font-family: var(--cond); font-weight: 500;
-  font-size: clamp(44px, 13vw, 72px); line-height: 1; margin: 18px 0 18px;
-}
-.visit .links { display: grid; gap: 6px; margin: 32px 0 72px; font-size: 19px; }
+.visit .wrap { padding-top: 48px; padding-bottom: calc(40px + env(safe-area-inset-bottom)); }
+.visit .links { display: grid; gap: 6px; margin: 0 0 56px; font-size: 19px; }
 .visit .links a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; padding: 6px 0; }
 .foot {
   display: flex; justify-content: space-between; align-items: flex-end;
@@ -160,14 +136,13 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
   font-family: var(--cond); font-weight: 500; font-size: 25px; letter-spacing: -0.01em;
 }
 
-/* Wider screens: entry columns, two-column about */
+/* Wider screens: two-column about and founder */
 @media (min-width: 760px) {
   body { font-size: 18px; }
-  .label, .specs dt { font-size: 13px; }
+  .label { font-size: 13px; }
   .site-head .wrap { min-height: 76px; }
   .announce .wrap { min-height: calc(100svh - 76px); }
   .details { grid-template-columns: repeat(2, minmax(0, 22em)); gap: 32px; }
-  .entries { grid-template-columns: repeat(3, 1fr); gap: 32px; }
   .about .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
   .about .section-head { grid-column: 1 / -1; }
 }
@@ -182,9 +157,8 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
   <div class="wrap">
     <a class="mark" href="./" aria-label="Brooklyn Design Archive, home">BDA</a>
     <nav class="nav" aria-label="Main">
-      <a href="#on-loan">On loan</a>
       <a href="#about">About</a>
-      <a href="#visit">Visit</a>
+      <a href="#founder">Founder</a>
     </nav>
   </div>
 </header>
@@ -205,47 +179,6 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
     </div>
   </section>
 
-  <section class="light" id="on-loan" aria-labelledby="on-loan-title">
-    <div class="wrap">
-      <div class="section-head"><h2 class="label" id="on-loan-title">On loan to Pratt</h2></div>
-      <ol class="entries">
-        <li class="entry">
-          <p class="label">Archive entry</p>
-          <h3>Chair<br>No. 14</h3>
-          <p class="by">Michael Thonet, 1859</p>
-          <dl class="specs">
-            <div><dt>Maker</dt><dd>Thonet, Vienna</dd></div>
-            <div><dt>Material</dt><dd>Steam-bent beech, woven cane</dd></div>
-            <div><dt>Category</dt><dd>Seating</dd></div>
-            <div><dt>Status</dt><dd>On loan, Pratt Egress Gallery</dd></div>
-          </dl>
-          <p class="note">The bentwood chair that made furniture a mass-produced object. Six parts, ten screws, two nuts.</p>
-        </li>
-        <li class="entry">
-          <p class="label">Archive entry</p>
-          <h3>LC7</h3>
-          <p class="by">Charlotte Perriand, Le Corbusier and Pierre Jeanneret, 1927</p>
-          <dl class="specs">
-            <div><dt>Maker</dt><dd>Cassina</dd></div>
-            <div><dt>Material</dt><dd>Chromed tubular steel, upholstered seat</dd></div>
-            <div><dt>Category</dt><dd>Seating</dd></div>
-            <div><dt>Status</dt><dd>On loan, Pratt Egress Gallery</dd></div>
-          </dl>
-        </li>
-        <li class="entry">
-          <p class="label">Archive entry</p>
-          <h3>Panton<br>Chair</h3>
-          <p class="by">Verner Panton, 1959</p>
-          <dl class="specs">
-            <div><dt>Maker</dt><dd>Vitra</dd></div>
-            <div><dt>Material</dt><dd>Molded plastic, one piece</dd></div>
-            <div><dt>Category</dt><dd>Seating</dd></div>
-            <div><dt>Status</dt><dd>On loan, Pratt Egress Gallery</dd></div>
-          </dl>
-        </li>
-      </ol>
-    </div>
-  </section>
 
   <section class="light about" id="about" aria-labelledby="about-title">
     <div class="wrap">
@@ -257,18 +190,26 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
       </div>
     </div>
   </section>
+
+  <section class="light about" id="founder" aria-labelledby="founder-title">
+    <div class="wrap">
+      <div class="section-head"><p class="label">Founder</p></div>
+      <h2 class="headline" id="founder-title">Gerardo Torres Davila</h2>
+      <div>
+        <p>Gerardo Torres Davila is an art director and cultural critic based in Brooklyn. He has written for the Interior Review and other publications.</p>
+        <p>He founded Brooklyn Design Archive to keep designed objects in use, on view and in conversation.</p>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer class="visit" id="visit" aria-labelledby="visit-title">
+<footer class="visit">
   <div class="wrap">
-    <p class="label">Visit</p>
-    <h2 id="visit-title">Visit<br>by appointment</h2>
-    <p class="label">Brooklyn, New York</p>
     <div class="links">
       <a href="https://www.instagram.com/brooklyndesignarchive/" rel="me">Instagram</a>
     </div>
     <div class="foot">
-      <p class="label">Brooklyn Design Archive<br>brooklyndesignarchive.com</p>
+      <p class="label">Brooklyn Design Archive<br>Brooklyn, New York</p>
       <div class="roundel" aria-hidden="true">BDA</div>
     </div>
   </div>
