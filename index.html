@@ -36,6 +36,9 @@
   /* 8 percent margin, as on the posts and poster */
   --m: clamp(20px, 8vw, 72px);
   --max: 1200px;
+
+  /* One size for every headline */
+  --headline: min(17vw, 150px);
 }
 
 * { box-sizing: border-box; }
@@ -82,7 +85,7 @@ a { color: inherit; }
 .mission .wrap { padding-top: 32px; padding-bottom: 48px; }
 .mission-title {
   font-family: var(--cond); font-weight: 500;
-  font-size: min(17vw, 150px); line-height: 0.95; letter-spacing: -0.01em;
+  font-size: var(--headline); line-height: 0.95; letter-spacing: -0.01em;
   margin: 0;
 }
 .mission-text { margin-top: 32px; max-width: 34em; }
@@ -110,9 +113,8 @@ a { color: inherit; }
 .announce .wrap { padding-top: 64px; padding-bottom: 72px; }
 .event-title {
   font-family: var(--cond); font-weight: 700;
-  /* "Materials" is about 3.7em wide; 22vw keeps it inside the 8 percent margins */
-  font-size: min(22vw, 200px);
-  line-height: 0.92; letter-spacing: -0.01em;
+  font-size: var(--headline);
+  line-height: 0.95; letter-spacing: -0.01em;
   margin: 0;
 }
 .event-sub {
@@ -154,8 +156,8 @@ section.light .wrap { padding-top: 64px; padding-bottom: 64px; }
 /* About */
 .headline {
   font-family: var(--cond); font-weight: 500;
-  font-size: clamp(40px, 11vw, 64px); line-height: 1; letter-spacing: -0.005em;
-  margin: 0 0 32px; max-width: 12ch;
+  font-size: var(--headline); line-height: 0.95; letter-spacing: -0.01em;
+  margin: 0 0 32px;
 }
 .about p { margin: 0 0 1.1em; max-width: 34em; }
 
