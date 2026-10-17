@@ -26,8 +26,15 @@ DTSTAMP:20261017T220000Z
 DTSTART;TZID=America/New_York:20261019T183000
 DTEND;TZID=America/New_York:20261019T193000
 SUMMARY:An Evening with Brooklyn Design Archive
-LOCATION:Juliana Curran Terian Design Center\, Pratt Institute\, 200 Willoughby Ave\, Brooklyn\, NY 11205
-DESCRIPTION:Materials that Matter\, presented in partnership with Pratt Institute's Material Lab. Enter by Willoughby Avenue. https://brooklyndesignarchive.com/evening/
+LOCATION:Juliana Curran Terian Design Center\, Pratt Institute\, 333 DeKalb
+  Ave\, Brooklyn\, NY 11205
+GEO:40.690563;-73.9628026
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="333 DeKalb Ave, Brooklyn, 
+ NY 11205";X-APPLE-RADIUS=70;X-TITLE="Juliana Curran Terian Design Center":
+ geo:40.690563,-73.9628026
+DESCRIPTION:Materials that Matter\, presented in partnership with Pratt Ins
+ titute's Material Lab. Enter by Willoughby Avenue. https://brooklyndesigna
+ rchive.com/evening/
 URL:https://brooklyndesignarchive.com/evening/
 END:VEVENT
 END:VCALENDAR
