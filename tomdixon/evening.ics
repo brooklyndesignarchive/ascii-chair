@@ -21,21 +21,19 @@ RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:bda-tomdixon-20261019@brooklyndesignarchive.com
-DTSTAMP:20261017T220000Z
-DTSTART;TZID=America/New_York:20261019T183000
-DTEND;TZID=America/New_York:20261019T193000
-SUMMARY:An Evening with Brooklyn Design Archive
-LOCATION:Juliana Curran Terian Design Center\, Pratt Institute\, 333 DeKalb
-  Ave\, Brooklyn\, NY 11205
-GEO:40.690563;-73.9628026
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="333 DeKalb Ave, Brooklyn, 
- NY 11205";X-APPLE-RADIUS=70;X-TITLE="Juliana Curran Terian Design Center":
- geo:40.690563,-73.9628026
-DESCRIPTION:Materials that Matter\, presented in partnership with Pratt Ins
- titute's Material Lab. Enter by Willoughby Avenue. Please call 585 351 102
- 9 if you have any issues finding the space.\n\nhttps://brooklyndesignarchi
- ve.com/tomdixon/
+UID:bda-tomdixon-20261109@brooklyndesignarchive.com
+DTSTAMP:20261023T160000Z
+DTSTART;TZID=America/New_York:20261109T173000
+DTEND;TZID=America/New_York:20261109T190000
+SUMMARY:Funk\, Form & Future: Tom Dixon New York
+LOCATION:Tom Dixon New York Showroom\, 186 Franklin Street\, New York\, NY
+  10013
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="186 Franklin Street, New 
+ York, NY 10013";X-APPLE-RADIUS=70;X-TITLE="Tom Dixon New York Showroom":ge
+ o:40.7193,-74.0102
+DESCRIPTION:An evening after hours at the Tom Dixon showroom with Charis Ma
+ rshall and Gerardo Torres\, with a tasting from Tribeca Wines.\n\nhttps://
+ brooklyndesignarchive.com/tomdixon/
 URL:https://brooklyndesignarchive.com/tomdixon/
 END:VEVENT
 END:VCALENDAR
