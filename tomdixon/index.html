@@ -38,11 +38,10 @@ body {
 /* The invite is a phone-width card, centered on larger screens */
 .card { position: relative; max-width: 440px; margin: 0 auto; overflow: hidden; background: #fff; }
 /* Header: the title set in type on cream paper */
-.header { background: #edebdf; }
+.header { background: #edebdf; padding-bottom: 72px; }
 .header img { display: block; width: 100%; height: auto; }
 .header h1 { margin: 0; padding: 14px 12% 0; font-weight: 400; font-style: italic; font-size: 40px; line-height: 1.12; letter-spacing: -0.01em; }
 .header .sub { padding: 96px 8% 0; font-size: 15px; line-height: 1.6; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey); }
-.header .edge { margin-top: 18px; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 section { position: relative; padding: 0 17%; }
@@ -74,7 +73,7 @@ em { font-style: italic; }
 .works .name { display: block; font-size: 17px; line-height: 1.35; }
 .works .mat { display: block; font-size: 12.5px; line-height: 1.4; color: var(--light); }
 
-.mission { padding-top: 44px; line-height: 1.95; }
+.mission { padding-top: 44px; padding-bottom: 72px; line-height: 1.95; }
 
 .home {
   display: inline-block; margin: 72px 0 0;
@@ -85,12 +84,7 @@ em { font-style: italic; }
 }
 .home:hover, .home:focus-visible { background: #fff; color: var(--ink); outline: 1px solid var(--ink); }
 
-.end { display: block; width: 100%; height: auto; margin-top: 72px; }
 
-/* Torn paper at the edges, from the printed invite */
-.scrap { position: absolute; height: auto; pointer-events: none; }
-.scrap--yellow { right: 0; top: 40px; width: 12%; }
-.scrap--blue { left: 0; top: 70px; width: 12%; }
 
 @media (max-width: 359px) {
   section { padding-left: 12%; padding-right: 12%; }
@@ -103,11 +97,9 @@ em { font-style: italic; }
   <header class="header">
     <p class="sub">Tom Dixon x<br>The Gerardo Guide</p>
     <h1>Funk, Form &amp; Future</h1>
-    <img class="edge" src="header-edge.jpg" width="1200" height="160" alt="">
   </header>
 
   <section class="intro">
-    <img class="scrap scrap--yellow" src="scrap-yellow.png" width="143" height="763" alt="">
     <p>Please join me Monday, November 9, at <span class="nb">5:30 pm</span> at the Tom Dixon showroom in Tribeca (<span class="nb">186 Franklin Street</span>). We’ll talk through Tom Dixon’s design history and walk through the <span class="nb">AW26 collection</span>, with wine from <span class="nb">Tribeca Wines</span>. <span class="nb">5:30 to 7 pm</span>.</p>
   </section>
 
@@ -116,7 +108,6 @@ em { font-style: italic; }
   </section>
 
   <section class="where">
-    <img class="scrap scrap--blue" src="scrap-blue.png" width="141" height="773" alt="">
     <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Tom+Dixon%2C+186+Franklin+Street%2C+New+York%2C+NY+10013" target="_blank" rel="noopener">Tom Dixon New York Showroom<br>186 Franklin Street<br>Tribeca, New York</a></p>
     <a class="cal" href="evening.ics" download>Add to Calendar</a>
     <a class="gcal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Funk%2C+Form+%26+Future%3A+Tom+Dixon+New+York&amp;dates=20261109T173000%2F20261109T190000&amp;ctz=America%2FNew_York&amp;location=Tom+Dixon+New+York+Showroom%2C+186+Franklin+Street%2C+New+York%2C+NY+10013&amp;details=An+evening+after+hours+at+the+Tom+Dixon+showroom+with+Charis+Marshall+and+Gerardo+Torres.%0A%0Ahttps%3A%2F%2Fbrooklyndesignarchive.com%2Ftomdixon%2F" target="_blank" rel="noopener">or Google Calendar</a>
@@ -136,8 +127,6 @@ em { font-style: italic; }
     <p>Brooklyn Design Archive is a cultural project advancing the understanding of significant artifacts from the fields of furniture, industrial design and architecture.</p>
     <a class="home" href="../">Brooklyn Design Archive</a>
   </section>
-
-  <img class="end" src="line-red.png" width="1200" height="66" alt="">
 </main>
 </body>
 </html>
