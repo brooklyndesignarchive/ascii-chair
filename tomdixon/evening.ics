@@ -22,17 +22,19 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:bda-tomdixon-20261109@brooklyndesignarchive.com
-DTSTAMP:20261024T050000Z
+DTSTAMP:20261024T060000Z
 DTSTART;TZID=America/New_York:20261109T173000
 DTEND;TZID=America/New_York:20261109T190000
-SUMMARY:Funk\, Form & Future: Tom Dixon x The Gerardo Guide
-LOCATION:Tom Dixon New York Studio\, 186 Franklin Street\, New York\, NY 1
- 0013
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="186 Franklin Street, New 
- York, NY 10013";X-APPLE-RADIUS=70;X-TITLE="Tom Dixon New York Studio":geo
- :40.7193,-74.0102
-DESCRIPTION:An evening of design and wine at the Tom Dixon studio in Tribe
- ca.\n\nhttps://brooklyndesignarchive.com/tomdixon/
+SUMMARY:An Evening with Tom Dixon
+LOCATION:Tom Dixon New York Studio\, 186 Franklin Street\, New York\, NY 10
+ 013
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="186 Franklin Street, New Y
+ ork, NY 10013";X-APPLE-RADIUS=70;X-TITLE="Tom Dixon New York Studio":geo:4
+ 0.7193,-74.0102
+DESCRIPTION:Tom Dixon x The Gerardo Guide\n\nTom Dixon New York Studio\n186
+  Franklin Street\, Tribeca\nNew York\, NY 10013\n\nMonday\, November 9\, 5
+ :30–7 pm\n\nTrouble finding the space? Call Gerardo at 585 351 1029.\n\n
+ https://brooklyndesignarchive.com/tomdixon/
 URL:https://brooklyndesignarchive.com/tomdixon/
 END:VEVENT
 END:VCALENDAR
