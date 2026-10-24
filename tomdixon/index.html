@@ -17,9 +17,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&display=swap">
 <style>
-/* GT America Condensed Bold for the Brooklyn Design Archive button, as on the main site */
-@font-face { font-family: "GT America Condensed"; src: url("../fonts/GT-America-Condensed-Bold-Trial.woff2") format("woff2"); font-weight: 700; font-display: swap; }
-
 :root {
   --ink: #111;
   --grey: #57534b;
@@ -66,17 +63,13 @@ h1 { margin: 34px 0 0; font-weight: 400; font-style: italic; font-size: 42px; li
 
 .rule { width: 275px; max-width: 76%; height: 0; margin: 34px auto 0; border: 0; border-top: 1px solid var(--ink); }
 
-.logo { display: flex; align-items: center; justify-content: center; width: 196px; height: 118px; margin: 64px auto 0; border: 1px solid var(--ink); }
-.logo img { display: block; width: 102px; height: auto; }
+/* Partner logos, side by side */
+.logos { display: flex; align-items: center; justify-content: center; gap: 44px; margin-top: 64px; }
+.logos a { display: block; }
+.logos img { display: block; height: auto; }
+.logos .td { width: 112px; }
+.logos .bda { width: 104px; }
 
-.home {
-  display: inline-block; margin: 40px 0 0;
-  background: var(--ink); color: #fff; text-decoration: none;
-  font-family: "GT America Condensed", "Arial Narrow", sans-serif; font-weight: 700;
-  font-size: 22px; line-height: 1; letter-spacing: -0.01em;
-  padding: 10px 22px 9px; white-space: nowrap;
-}
-.home:hover, .home:focus-visible { background: #fff; color: var(--ink); outline: 1px solid var(--ink); }
 
 /* RSVP popup */
 dialog {
@@ -160,9 +153,10 @@ dialog .gcal:hover, dialog .gcal:focus-visible { text-decoration: underline; }
     <a class="btn" href="evening.ics" download>Add to Calendar</a>
   </div>
 
-  <a class="logo" href="https://www.tomdixon.net/" target="_blank" rel="noopener"><img src="tom-dixon-logo.png" width="781" height="367" alt="Tom Dixon"></a>
-
-  <a class="home" href="../">Brooklyn Design Archive</a>
+  <div class="logos">
+    <a href="https://www.tomdixon.net/" target="_blank" rel="noopener"><img class="td" src="tom-dixon-logo.png" width="781" height="367" alt="Tom Dixon"></a>
+    <a href="../"><img class="bda" src="bda-logo.png" width="600" height="489" alt="Brooklyn Design Archive"></a>
+  </div>
 </main>
 
 <dialog id="rsvp-yes" aria-labelledby="yes-title">
