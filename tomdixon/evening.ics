@@ -22,18 +22,17 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:bda-tomdixon-20261109@brooklyndesignarchive.com
-DTSTAMP:20261023T160000Z
+DTSTAMP:20261024T050000Z
 DTSTART;TZID=America/New_York:20261109T173000
 DTEND;TZID=America/New_York:20261109T190000
-SUMMARY:Funk\, Form & Future: Tom Dixon New York
-LOCATION:Tom Dixon New York Showroom\, 186 Franklin Street\, New York\, NY
-  10013
+SUMMARY:Funk\, Form & Future: Tom Dixon x The Gerardo Guide
+LOCATION:Tom Dixon New York Studio\, 186 Franklin Street\, New York\, NY 1
+ 0013
 X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="186 Franklin Street, New 
- York, NY 10013";X-APPLE-RADIUS=70;X-TITLE="Tom Dixon New York Showroom":ge
- o:40.7193,-74.0102
-DESCRIPTION:An evening after hours at the Tom Dixon showroom with Charis Ma
- rshall and Gerardo Torres\, with a tasting from Tribeca Wines.\n\nhttps://
- brooklyndesignarchive.com/tomdixon/
+ York, NY 10013";X-APPLE-RADIUS=70;X-TITLE="Tom Dixon New York Studio":geo
+ :40.7193,-74.0102
+DESCRIPTION:An evening of design and wine at the Tom Dixon studio in Tribe
+ ca.\n\nhttps://brooklyndesignarchive.com/tomdixon/
 URL:https://brooklyndesignarchive.com/tomdixon/
 END:VEVENT
 END:VCALENDAR
