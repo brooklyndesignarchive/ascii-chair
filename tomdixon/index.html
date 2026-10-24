@@ -191,7 +191,7 @@ dialog .gcal:hover, dialog .gcal:focus-visible { text-decoration: underline; }
 
 <script>
 // Web app URL from the RSVP sheet's Apps Script deployment (Deploy > New deployment > Web app)
-const RSVP_URL = "";
+const RSVP_URL = "https://script.google.com/macros/s/AKfycbxFHeJbE0bKoDyCYH0cgrB_m4ZqH3JaDY754X_O_ZfSO-mMAVginSQZsGu9_hei81NU/exec";
 
 document.querySelectorAll("[data-open]").forEach(btn => {
   btn.addEventListener("click", () => document.getElementById("rsvp-" + btn.dataset.open).showModal());
